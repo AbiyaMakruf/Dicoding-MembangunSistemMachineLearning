@@ -22,19 +22,12 @@ jobs:
 
     - name: Run preprocessing
       run: |
-        cd Eksperimen_MSML
         python run_preprocessing.py
-
-    - name: Upload preprocessed dataset
-      uses: actions/upload-artifact@v4
-      with:
-        name: preprocessed-data
-        path: preprocessing/insurance_preprocessing/*.csv
 
     - name: Commit & Push results
       run: |
         git config --global user.name "github-actions[bot]"
         git config --global user.email "github-actions[bot]@users.noreply.github.com"
-        git add preprocessing/namadataset_preprocessing/*.csv
+        git add Eksperimen_MSML_preprocessing/namadataset_preprocessing/*.csv
         git commit -m "Update preprocessed dataset [skip ci]" || echo "No changes to commit"
         git push origin main
