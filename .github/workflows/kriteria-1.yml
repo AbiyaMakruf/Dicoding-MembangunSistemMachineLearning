@@ -22,8 +22,7 @@ jobs:
 
     - name: Run preprocessing
       run: |
-        cd eksperimen_MSML
-        python run_preprocessing.py
+        cd eksperimen_MSML && python run_preprocessing.py
 
     - name: Commit & Push results
       run: |
